@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1704611386690,
+      "tag": "0000_lumpy_hedge_knight",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1705088231396,
+      "tag": "0001_left_gambit",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1705169851983,
+      "tag": "0002_nostalgic_energizer",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1705170057110,
+      "tag": "0003_slim_russian",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1705443663193,
+      "tag": "0004_flippant_madelyne_pryor",
+      "breakpoints": true
+    }
+  ]
+}

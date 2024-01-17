@@ -1,0 +1,13 @@
+export { default as BookmarkIcon } from './bookmark.svg';
+export { default as BuildingIcon } from './building.svg';
+export { default as CreditCardIcon } from './creditCard.svg';
+export { default as DashboardIcon } from './dashboard.svg';
+export { default as DocumentIcon } from './document.svg';
+export { default as EnvelopeIcon } from './envelope.svg';
+export { default as GoogleLogo } from './googleLogo.svg';
+export { default as ImgFileIcon } from './img_file.svg';
+export { default as PdfFileIcon } from './pdf_file.svg';
+export { default as PlusIcon } from './plus.svg';
+export { default as SearchIcon } from './search.svg';
+export { default as SettingsIcon } from './settings.svg';
+export { default as ToolIcon } from './tools.svg';
