@@ -13,7 +13,8 @@ interface LinkItemProps {
 
 const LinkItem = ({ href, text, Icon }: LinkItemProps) => {
   const pathname = usePathname();
-  const isActive = pathname === href;
+  const isActive =
+    pathname === href || (pathname.startsWith(href) && href !== '/vendor');
 
   return (
     <Link

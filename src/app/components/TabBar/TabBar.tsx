@@ -50,7 +50,7 @@ export default function TabBar({
               } mb-1 flex items-center justify-center gap-2 rounded-md p-2 text-sm font-medium transition-all duration-150 ease-in-out hover:bg-grey-100`}
               onClick={() => setSelected(index)}
             >
-              <div className="h-4 w-4">{item.Icon && item.Icon}</div>
+              {item.Icon && <div className="h-4 w-4">{item.Icon}</div>}
               {item.label}
             </button>
           </div>
