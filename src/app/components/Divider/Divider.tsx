@@ -6,7 +6,10 @@ interface DividerProps extends React.HTMLProps<HTMLDivElement> {
 
 const Divider = React.forwardRef<HTMLDivElement, DividerProps>(
   ({ className }: DividerProps, ref) => (
-    <div ref={ref} className={`w-full border border-grey-200 ${className}`} />
+    <div
+      ref={ref}
+      className={`h-px w-full border border-grey-200 ${className}`}
+    />
   )
 );
 

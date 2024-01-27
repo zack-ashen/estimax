@@ -1,17 +1,17 @@
 import { pgTable, uuid } from 'drizzle-orm/pg-core';
 import { relations } from 'drizzle-orm/relations';
-import { media, properties } from '..';
+import { media, projects } from '..';
 
 export const projectMedia = pgTable('projectMedia', {
   id: uuid('id').defaultRandom().primaryKey(),
-  projectId: uuid('projectId').references(() => properties.id),
+  projectId: uuid('projectId').references(() => projects.id),
   mediaId: uuid('mediaId').references(() => media.id),
 });
 
 export const projectMediaRelations = relations(projectMedia, ({ one }) => ({
-  property: one(properties, {
+  project: one(projects, {
     fields: [projectMedia.projectId],
-    references: [properties.id],
+    references: [projects.id],
   }),
   media: one(media, {
     fields: [projectMedia.mediaId],

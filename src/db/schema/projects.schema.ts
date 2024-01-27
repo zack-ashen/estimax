@@ -11,6 +11,7 @@ import {
 } from 'drizzle-orm/pg-core';
 import { InferInsertModel, InferSelectModel } from 'drizzle-orm/table';
 import { bids } from './bids.schema';
+import { projectMedia } from './joinTables/projectMedia.schema';
 import { organizations } from './organization.schema';
 import { properties } from './properties.schema';
 
@@ -45,6 +46,7 @@ export const projectsRelations = relations(projects, ({ many, one }) => ({
     references: [organizations.id],
   }),
   bids: many(bids),
+  media: many(projectMedia),
 }));
 
 export type SelectProject = InferSelectModel<typeof projects>;

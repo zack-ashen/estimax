@@ -18,6 +18,21 @@ const projectService = {
 
     return { ...newProject, media: project.media };
   },
+
+  async search(): Promise<Project[]> {
+    const filteredProjects = await db.query.projects.findMany({
+      with: {
+        media: true,
+      },
+    });
+
+    const parsedProjects = filteredProjects.map((project) => ({
+      ...project,
+      media: project.media.map((media) => media.id),
+    }));
+
+    return parsedProjects;
+  },
 };
 
 export default projectService;

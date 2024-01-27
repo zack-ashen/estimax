@@ -1,20 +1,22 @@
-import { Button } from '@/app/components/Inputs/Button/Button';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/app/components/Popover/Popover';
+import ProjectCard from '@/app/components/Cards/ProjectCard/ProjectCard';
+import Divider from '@/app/components/Divider/Divider';
+import ProjectFilterBar from '@/app/components/FilterBar/ProjectFilterBar/ProjectFilterBar';
+import findProjects from './actions/findProjects';
 
-export default function FindProjectsPage() {
+export default async function FindProjectsPage() {
+  const projects = await findProjects();
+
   return (
     <>
-      <div>
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button variant="secondary">Open Popover</Button>
-          </PopoverTrigger>
-          <PopoverContent>Place content for the popover here.</PopoverContent>
-        </Popover>
+      <p className="SectionHeader">Find Projects</p>
+      <Divider className="mb-5 mt-3" />
+
+      <ProjectFilterBar />
+
+      <div className="mt-7">
+        {projects.map((project, idx) => (
+          <ProjectCard project={project} key={idx} />
+        ))}
       </div>
     </>
   );

@@ -1,8 +1,18 @@
 'use client';
+import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
-import { LuCoins, LuHammer, LuLayoutDashboard } from 'react-icons/lu';
+import {
+  LuBell,
+  LuCoins,
+  LuHammer,
+  LuInbox,
+  LuLayoutDashboard,
+  LuShoppingBag,
+} from 'react-icons/lu';
+import ProfileDropdown from '../components/DropdownMenu/ProfileDropdown/ProfileDropdown';
+import { buttonVariants } from '../components/Inputs/Button/Button';
 import NavBar from '../components/NavBar/NavBar';
 
 interface LinkItemProps {
@@ -19,7 +29,7 @@ const LinkItem = ({ href, text, Icon }: LinkItemProps) => {
   return (
     <Link
       href={href}
-      className={`flex flex-row items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-grey-600 transition-all ${
+      className={`input-focus flex flex-row items-center gap-2 rounded-md px-3 py-2 text-sm font-medium text-grey-600 transition-all ${
         isActive ? 'bg-grey-100 text-grey-700' : 'hover:bg-grey-100'
       }`}
     >
@@ -49,7 +59,20 @@ export default function VendorLayout({ children }: PropsWithChildren) {
             <NavLinks />
           </div>
         }
-        rightChild={<>Right Section</>}
+        rightChild={
+          <div className="flex flex-row items-center gap-6">
+            <Link
+              href="/vendor/projects/find"
+              className={cn(buttonVariants({ variant: 'tertiary' }))}
+            >
+              <LuShoppingBag />
+            </Link>
+            <div className="h-5 w-px bg-grey-300" />
+            <LuBell />
+            <LuInbox />
+            <ProfileDropdown />
+          </div>
+        }
       />
       <main className="p-10">{children}</main>
     </div>

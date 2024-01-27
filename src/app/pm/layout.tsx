@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import { PropsWithChildren } from 'react';
+import ProfileDropdown from '../components/DropdownMenu/ProfileDropdown/ProfileDropdown';
 import NavBar from '../components/NavBar/NavBar';
 import PMSidebar from '../components/Sidebar/PMSidebar/PMSidebar';
 
@@ -23,7 +24,11 @@ export default function PropertyManagerLayout({ children }: PropsWithChildren) {
               {pageTitles[path] && pageTitles[path]}
             </p>
           }
-          rightChild={<>Right Section</>}
+          rightChild={
+            <>
+              <ProfileDropdown />
+            </>
+          }
         />
         <main className="p-10">{children}</main>
       </div>

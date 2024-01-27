@@ -8,6 +8,7 @@ export { default as GoogleLogo } from './googleLogo.svg';
 export { default as ImgFileIcon } from './img_file.svg';
 export { default as PdfFileIcon } from './pdf_file.svg';
 export { default as PlusIcon } from './plus.svg';
+export { default as ProfileIcon } from './profile.svg';
 export { default as SearchIcon } from './search.svg';
 export { default as SettingsIcon } from './settings.svg';
 export { default as ToolIcon } from './tools.svg';

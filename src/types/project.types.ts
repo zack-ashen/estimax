@@ -12,3 +12,5 @@ export type Project = SelectProject & {
 export type NewProject = InsertProject & {
   media: string[];
 };
+
+export type VendorProject = Omit<Project, 'organization'>;
